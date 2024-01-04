@@ -1,0 +1,26 @@
+{
+    "id": "01DB29E9",
+    "path": "D:/RProject/tmp/exp4/linux.R",
+    "project_path": "exp4/linux.R",
+    "type": "r_source",
+    "hash": "436861879",
+    "contents": "",
+    "dirty": false,
+    "created": 1701766067416.0,
+    "source_on_save": false,
+    "relative_order": 2,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "65,7",
+        "scrollLine": "44"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1701770445,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1701770445321,
+    "read_only": false,
+    "read_only_alternatives": []
+}

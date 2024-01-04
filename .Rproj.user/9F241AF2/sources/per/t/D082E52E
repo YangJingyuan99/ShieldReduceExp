@@ -1,0 +1,26 @@
+{
+    "id": "D082E52E",
+    "path": "D:/RProject/tmp/exp4/alpha.R",
+    "project_path": "exp4/alpha.R",
+    "type": "r_source",
+    "hash": "1590474293",
+    "contents": "",
+    "dirty": false,
+    "created": 1704086083738.0,
+    "source_on_save": false,
+    "relative_order": 8,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "115,0",
+        "scrollLine": "43"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1704088693,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1704088693495,
+    "read_only": false,
+    "read_only_alternatives": []
+}

@@ -1,0 +1,26 @@
+{
+    "id": "9FC99192",
+    "path": "D:/RProject/tmp/exp7/exp7.R",
+    "project_path": "exp7/exp7.R",
+    "type": "r_source",
+    "hash": "864457344",
+    "contents": "",
+    "dirty": false,
+    "created": 1704005408190.0,
+    "source_on_save": false,
+    "relative_order": 1,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "111,0",
+        "scrollLine": "65"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1704005458,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1704005458830,
+    "read_only": false,
+    "read_only_alternatives": []
+}

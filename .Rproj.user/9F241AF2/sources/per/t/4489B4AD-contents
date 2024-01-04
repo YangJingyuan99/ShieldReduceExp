@@ -1,0 +1,96 @@
+rm(list = ls())
+
+exp = "ecall"
+exportPath = "C:/Users/杨劲远/Desktop/"
+exportName = "ecall.pdf"
+
+root = "D:/RProject/tmp"
+setwd(sprintf("%s/%s", root, exp))
+
+library(ggplot2)
+library(readxl)
+library(extrafont)
+library(showtext)
+
+font_add('Arial','C:/Windows/Fonts/arial.ttf')
+showtext_auto()
+
+ECall = c(0.39, 0.11, 0.2, 0.009)
+OCall = c(0.14, 0.02, 0.24, 0.02)
+
+# 禁止科学计数法
+options(scipen = 999)
+
+barWidth = 0.4
+x3_offset = c(0, 2.2, 4.4, 6.6)
+x1_offset = numeric(4)
+x2_offset = numeric(4)
+x4_offset = numeric(4)
+x5_offset = numeric(4)
+for(i in 1:4) {
+  x1_offset[i] = x3_offset[i] - 2 * barWidth
+  x2_offset[i] = x3_offset[i] - 1 * barWidth
+  x4_offset[i] = x3_offset[i] + 1 * barWidth
+  x5_offset[i] = x3_offset[i] + 2 * barWidth
+}
+
+# 设置字体
+windowsFonts(Arial=windowsFont("Arial"))
+#绘图
+ggplot() + 
+  # 坐标轴显示范围
+  coord_cartesian(xlim =c(-0.7, 8), ylim = c(0.0275, 0.65)) +
+  # 柱状图
+  geom_col(aes(x = x1_offset,y = FingerprintIndex, fill = "FingerprintIndex"), width = 0.4, 
+           color = "black", size = 0.5) +
+  geom_col(aes(x = x2_offset,y = FeatureIndex, fill = "FeatureIndex"), width = 0.4, 
+           color = "black", size = 0.5) +
+  # 白底，没有上边框和右边框
+  theme_classic() +
+  # 设置坐标轴上字体大小
+  theme(axis.text.x = element_text(size = 22, color = "black")) +
+  theme(axis.text.y = element_text(size = 27, color = "black")) +
+  # 设置字体样式
+  theme(text = element_text(family = "Arial")) +
+  # 设置label字体大小
+  theme(axis.title.x = element_text(size = 32)) +
+  theme(axis.title.y = element_text(size = 28)) +
+  # 设置label内容
+  labs(y = "Index Overhead(%)", x = NULL) +
+  # 隐藏x轴label
+  theme(axis.title.x = element_blank()) +
+  # 设置刻度内容及位置
+  scale_x_continuous(breaks = x3_offset,
+                     labels = c("Linux", "Web", "Docker", "SimOS")) +
+  scale_y_continuous(breaks = c(0, 0.2, 0.4, 0.6),
+                     labels = c(0, 0.2, 0.4, 0.6)) +
+  # 设置文本，hjust和vjust设置对齐基准点
+  geom_text(aes(x = x1_offset, y = FingerprintIndex), hjust = 0,
+            vjust = 0.5, label=FingerprintIndex, angle = 90, size = 9.5, nudge_y = 0.01) +
+  geom_text(aes(x = x2_offset, y = FeatureIndex), hjust = 0,
+            vjust = 0.5, label=FeatureIndex, angle = 90, size = 9.5, nudge_y = 0.01) +
+  # 图例
+  scale_fill_manual(name=NULL, 
+                    values=c("FingerprintIndex" = "#AD0626",
+                             "FeatureIndex" = "#B79AD1",
+                             "DeltaIndex" = "#F2BE5C",
+                             "BackwardIndex" = "#75B8BF",
+                             "DeletionMap" = "#2C3359"),
+                    limits=c("FingerprintIndex",
+                             "FeatureIndex",
+                             "DeltaIndex",
+                             "BackwardIndex",
+                             "DeletionMap")) +
+  # 图例位置
+  theme(legend.position = c(0.48, 0.88)) +
+  # 图例背景设置为空
+  theme(legend.background = element_rect(fill = "transparent")) +
+  # 图例大小
+  theme(legend.text = element_text(size = 25)) +
+  # 图例每行元素个数
+  guides(fill=guide_legend(ncol = 3, #根据ncol或者nrow设置图例显示行数或列数（设置一个即可）
+                           byrow = T))#默认F，表示升序填充，反之则降序
+
+
+# 保存文件
+ggsave(paste(exportPath, exportName, sep=""), plot = last_plot(), width = 10, height = 4)
