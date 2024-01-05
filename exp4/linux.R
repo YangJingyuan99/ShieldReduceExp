@@ -2,7 +2,7 @@ rm(list = ls())
 
 exp = "exp4"
 dataset = "Linux"
-exportPath = "C:/Users/YangJingyuan/Desktop/"
+exportPath = "C:/Users/pc/Desktop/"
 exportName = "exp4-linux.pdf"
 
 datasetPathName = "20230818-data"
