@@ -1,7 +1,7 @@
 rm(list = ls())
 
 exp = "exp7"
-exportPath = "C:/Users/pc/Desktop/"
+exportPath = "C:/Users/YangJingyuan/Desktop/"
 exportName = "exp7.pdf"
 
 root = "D:/RProject/tmp"
@@ -55,7 +55,7 @@ ggplot() +
   theme(axis.title.x = element_text(size = 45)) +
   theme(axis.title.y = element_text(size = 38)) +
   # 设置label内容
-  labs(y = "Index Overhead(%)", x = NULL) +
+  labs(y = "Index Overhead (%)", x = NULL) +
   # ylabel位置
   theme(axis.title.y = element_text(hjust = 1)) +
   # 隐藏x轴label
@@ -81,15 +81,15 @@ ggplot() +
                              "FeatureIndex",
                              "DeltaIndex")) +
   # 图例位置
-  theme(legend.position = c(0.7, 0.82)) +
+  theme(legend.position = c(0.5, 0.92)) +
   # 图例背景设置为空
   theme(legend.background = element_rect(fill = "transparent")) +
   # 图例大小
-  theme(legend.text = element_text(size = 38)) +
+  theme(legend.text = element_text(size = 36)) +
   # 图例每行元素个数
-  guides(fill=guide_legend(ncol = 1, #根据ncol或者nrow设置图例显示行数或列数（设置一个即可）
+  guides(fill=guide_legend(ncol = 3, #根据ncol或者nrow设置图例显示行数或列数（设置一个即可）
                            byrow = T))#默认F，表示升序填充，反之则降序
 
 
 # 保存文件
-ggsave(paste(exportPath, exportName, sep=""), plot = last_plot(), width = 10, height = 5)
+ggsave(paste(exportPath, exportName, sep=""), plot = last_plot(), width = 12, height = 5)
