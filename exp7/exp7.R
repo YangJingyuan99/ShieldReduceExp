@@ -1,7 +1,7 @@
 rm(list = ls())
 
 exp = "exp7"
-exportPath = "C:/Users/YangJingyuan/Desktop/"
+exportPath = "C:/Users/pc/Desktop/"
 exportName = "exp7.pdf"
 
 root = "D:/RProject/tmp"
@@ -36,13 +36,13 @@ windowsFonts(Arial=windowsFont("Arial"))
 #绘图
 ggplot() + 
   # 坐标轴显示范围
-  coord_cartesian(xlim =c(-0.5, 5), ylim = c(0.03, 0.62)) +
+  coord_cartesian(xlim =c(-0.5, 5), ylim = c(0.036, 0.77)) +
   # 柱状图
-  geom_col(aes(x = x1_offset,y = FingerprintIndex, fill = "FingerprintIndex"), width = 0.4, 
+  geom_col(aes(x = x1_offset,y = FingerprintIndex, fill = "Fingerprint Index"), width = 0.4, 
            color = "black", size = 0.5) +
-  geom_col(aes(x = x2_offset,y = FeatureIndex, fill = "FeatureIndex"), width = 0.4, 
+  geom_col(aes(x = x2_offset,y = FeatureIndex, fill = "Feature Index"), width = 0.4, 
            color = "black", size = 0.5) +
-  geom_col(aes(x = x3_offset,y = DeltaIndex, fill = "DeltaIndex"), width = 0.4, 
+  geom_col(aes(x = x3_offset,y = DeltaIndex, fill = "Delta Index"), width = 0.4, 
            color = "black", size = 0.5) +
   # 白底，没有上边框和右边框
   theme_classic() +
@@ -63,8 +63,8 @@ ggplot() +
   # 设置刻度内容及位置
   scale_x_continuous(breaks = x2_offset,
                      labels = c("Linux", "Web", "Docker", "SimOS")) +
-  scale_y_continuous(breaks = c(0, 0.2, 0.4, 0.6),
-                     labels = c(0, 0.2, 0.4, 0.6)) +
+  scale_y_continuous(breaks = c(0, 0.3, 0.6),
+                     labels = c(0, 0.3, 0.6)) +
   # 设置文本，hjust和vjust设置对齐基准点
   geom_text(aes(x = x1_offset, y = FingerprintIndex), hjust = 0,
             vjust = 0.5, label=FingerprintIndex, angle = 90, size = 12, nudge_y = 0.008) +
@@ -74,20 +74,20 @@ ggplot() +
             vjust = 0.5, label=DeltaIndex, angle = 90, size = 12, nudge_y = 0.008) +
   # 图例
   scale_fill_manual(name=NULL, 
-                    values=c("FingerprintIndex" = "#AD0626",
-                             "FeatureIndex" = "#B79AD1",
-                             "DeltaIndex" = "#F2BE5C"),
-                    limits=c("FingerprintIndex",
-                             "FeatureIndex",
-                             "DeltaIndex")) +
+                    values=c("Fingerprint Index" = "#AD0626",
+                             "Feature Index" = "#B79AD1",
+                             "Delta Index" = "#F2BE5C"),
+                    limits=c("Fingerprint Index",
+                             "Feature Index",
+                             "Delta Index")) +
   # 图例位置
-  theme(legend.position = c(0.5, 0.92)) +
+  theme(legend.position = c(0.42, 0.88)) +
   # 图例背景设置为空
   theme(legend.background = element_rect(fill = "transparent")) +
   # 图例大小
-  theme(legend.text = element_text(size = 36)) +
+  theme(legend.text = element_text(size = 38)) +
   # 图例每行元素个数
-  guides(fill=guide_legend(ncol = 3, #根据ncol或者nrow设置图例显示行数或列数（设置一个即可）
+  guides(fill=guide_legend(ncol = 2, #根据ncol或者nrow设置图例显示行数或列数（设置一个即可）
                            byrow = T))#默认F，表示升序填充，反之则降序
 
 
