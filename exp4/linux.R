@@ -2,7 +2,7 @@ rm(list = ls())
 
 exp = "exp4"
 dataset = "Linux"
-exportPath = "C:/Users/pc/Desktop/"
+exportPath = "C:/Users/YangJingyuan/Desktop/"
 exportName = "exp4-linux.pdf"
 
 datasetPathName = "20230818-data"
@@ -57,7 +57,7 @@ p1 <- ggplot() +
   theme(axis.title.x = element_text(size = 45)) +
   theme(axis.title.y = element_text(size = 41)) +
   # 设置label内容
-  labs(y = "Time Duration (s)", x = "Threshold") +
+  labs(y = "Time Duration (s)", x = "Threshold t") +
   # 设置刻度内容及位置
   scale_x_continuous(breaks = x3_offset,
                      labels = c("0", "0.01", "0.02", "0.03", "0.04")) +
