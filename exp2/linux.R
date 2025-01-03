@@ -64,8 +64,8 @@ ggplot() +
   # 设置label内容
   labs(y = "Upload (MiB/s)", x = "Snapshot") +
   # 设置刻度内容及位置
-  scale_x_continuous(breaks = c(1, 50, 100, 150, 210),
-                        labels = c(1, 50, 100, 150, 210)) +
+  scale_x_continuous(breaks = c(1, 50, 100, 150, 209),
+                        labels = c(1, 50, 100, 150, 209)) +
   scale_y_continuous(breaks = c(0, 200, 400),
                      labels = c(0, 200, 400))
   

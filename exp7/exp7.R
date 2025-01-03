@@ -15,9 +15,9 @@ library(showtext)
 font_add('Arial','C:/Windows/Fonts/arial.ttf')
 showtext_auto()
 
-FingerprintIndex = c(0.39, 0.11, 0.2, 0.009)
-FeatureIndex = c(0.14, 0.02, 0.24, 0.02)
-DeltaIndex = c(0.14, 0.03, 0.04, 0.001)
+FingerprintIndex = c(0.39, 0.11, 0.19, 0.03)
+FeatureIndex = c(0.14, 0.02, 0.24, 0.05)
+DeltaIndex = c(0.15, 0.04, 0.04, 0.002)
 
 # 禁止科学计数法
 options(scipen = 999)
@@ -36,13 +36,13 @@ windowsFonts(Arial=windowsFont("Arial"))
 #绘图
 ggplot() + 
   # 坐标轴显示范围
-  coord_cartesian(xlim =c(-0.5, 5), ylim = c(0.03, 0.62)) +
+  coord_cartesian(xlim =c(-0.5, 5), ylim = c(0.0355, 0.75)) +
   # 柱状图
-  geom_col(aes(x = x1_offset,y = FingerprintIndex, fill = "FingerprintIndex"), width = 0.4, 
+  geom_col(aes(x = x1_offset,y = FingerprintIndex, fill = "Fingerprint Index"), width = 0.4, 
            color = "black", size = 0.5) +
-  geom_col(aes(x = x2_offset,y = FeatureIndex, fill = "FeatureIndex"), width = 0.4, 
+  geom_col(aes(x = x2_offset,y = FeatureIndex, fill = "Feature Index"), width = 0.4, 
            color = "black", size = 0.5) +
-  geom_col(aes(x = x3_offset,y = DeltaIndex, fill = "DeltaIndex"), width = 0.4, 
+  geom_col(aes(x = x3_offset,y = DeltaIndex, fill = "Delta Index"), width = 0.4, 
            color = "black", size = 0.5) +
   # 白底，没有上边框和右边框
   theme_classic() +
@@ -74,20 +74,20 @@ ggplot() +
             vjust = 0.5, label=DeltaIndex, angle = 90, size = 12, nudge_y = 0.008) +
   # 图例
   scale_fill_manual(name=NULL, 
-                    values=c("FingerprintIndex" = "#AD0626",
-                             "FeatureIndex" = "#B79AD1",
-                             "DeltaIndex" = "#F2BE5C"),
-                    limits=c("FingerprintIndex",
-                             "FeatureIndex",
-                             "DeltaIndex")) +
+                    values=c("Fingerprint Index" = "#AD0626",
+                             "Feature Index" = "#B79AD1",
+                             "Delta Index" = "#F2BE5C"),
+                    limits=c("Fingerprint Index",
+                             "Feature Index",
+                             "Delta Index")) +
   # 图例位置
-  theme(legend.position = c(0.5, 0.92)) +
+  theme(legend.position = c(0.42, 0.88)) +
   # 图例背景设置为空
   theme(legend.background = element_rect(fill = "transparent")) +
   # 图例大小
-  theme(legend.text = element_text(size = 36)) +
+  theme(legend.text = element_text(size = 40)) +
   # 图例每行元素个数
-  guides(fill=guide_legend(ncol = 3, #根据ncol或者nrow设置图例显示行数或列数（设置一个即可）
+  guides(fill=guide_legend(ncol = 2, #根据ncol或者nrow设置图例显示行数或列数（设置一个即可）
                            byrow = T))#默认F，表示升序填充，反之则降序
 
 

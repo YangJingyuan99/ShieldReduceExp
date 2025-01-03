@@ -44,7 +44,7 @@ for (i in 1:nrow(Data)){
 windowsFonts(Arial=windowsFont("Arial"))
 ggplot() + 
   # 坐标轴显示范围
-  coord_cartesian(xlim =c(4, 85), ylim = c(0, 650)) +
+  coord_cartesian(xlim =c(4, 80), ylim = c(0, 650)) +
   # 折线
   geom_line(aes(x=xline,y=SecureMeGAUpload), color="#F2BE5C", size=2.8) + 
   geom_line(aes(x=xline,y=DEBEUpload), color="#B79AD1", size=2.8) + 
@@ -64,8 +64,8 @@ ggplot() +
   # 设置label内容
   labs(y = "Upload (MiB/s)", x = "Snapshot") +
   # 设置刻度内容及位置
-  scale_x_continuous(breaks = c(1, 25, 50, 85),
-                     labels = c(1, 25, 50, 85)) +
+  scale_x_continuous(breaks = c(1, 25, 50, 78),
+                     labels = c(1, 25, 50, 78)) +
   scale_y_continuous(breaks = c(0, 300, 600),
                      labels = c(0, 300, 600))
 

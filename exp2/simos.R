@@ -44,7 +44,7 @@ for (i in 1:nrow(Data)){
 windowsFonts(Arial=windowsFont("Arial"))
 ggplot() + 
   # 坐标轴显示范围
-  coord_cartesian(xlim =c(2, 30), ylim = c(0, 850)) +
+  coord_cartesian(xlim =c(2, 30), ylim = c(0, 1000)) +
   # 折线
   geom_line(aes(x=xline,y=SecureMeGAUpload), color="#F2BE5C", size=2.8) + 
   geom_line(aes(x=xline,y=DEBEUpload), color="#B79AD1", size=2.8) + 
@@ -66,8 +66,8 @@ ggplot() +
   # 设置刻度内容及位置
   scale_x_continuous(breaks = c(1, 10, 20, 30),
                      labels = c(1, 10, 20, 30)) +
-  scale_y_continuous(breaks = c(0, 400, 800),
-                     labels = c(0, 400, 800))
+  scale_y_continuous(breaks = c(0, 450, 900),
+                     labels = c(0, 450, 900))
 
 # 保存文件
 ggsave(paste(exportPath, exportName, sep=""), plot = last_plot(), width = 10, height = 5)

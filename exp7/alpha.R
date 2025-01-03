@@ -15,10 +15,10 @@ library(showtext)
 font_add('Arial','C:/Windows/Fonts/arial.ttf')
 showtext_auto()
 
-Linux = c(0.146,	0.085,	0.052,	0.020,	0.003)
-Web = c(0.042,	0.027,	0.018,	0.008,	0.0003)
-Docker = c(0.043,	0.040,	0.028,	0.015,	0.007)
-SimOS = c(0.002,	0.002,	0.002,	0.002,	0.001)
+Linux = c(0.14558,	0.08657,	0.05278,	0.01993,	0.0027)
+Web = c(0.0421,	0.02869,	0.01877,	0.008722,	0.0003886)
+Docker = c(0.0447,	0.041,	0.0298,	0.0152,	0.0068)
+SimOS = c(0.00226,	0.00226,	0.00226,	0.00226,	0.00053)
 
 #x轴数据
 xline <- numeric(5)
@@ -34,7 +34,7 @@ ggplot() +
   coord_cartesian(xlim =c(1, 5), ylim = c(0, 0.15)) +
   # 折线和散点
   geom_line(aes(x=xline,y=Docker,color="Docker"), size=3) + 
-  geom_point(aes(x=xline,y=Docker,shape="Docker",color="Docker"), color = "#F2BE5C", 
+  geom_point(aes(x=xline,y=Docker,shape="Docker",color="Docker"), 
              size = 10, stroke=4.5) +
   geom_line(aes(x=xline,y=Web,color="Web"), size=3) + 
   geom_point(aes(x=xline,y=Web,shape="Web",color="Web"), 
