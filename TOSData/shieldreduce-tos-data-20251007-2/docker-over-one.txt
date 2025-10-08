@@ -1,0 +1,18 @@
+**Enclave**: <EcallFreqIndex>: basechunk num is 434098 and delta chunk num is403949
+**Enclave**: <INFO>: 执行Extension离线处理模式
+**Enclave**: <offline_backward>: ===== 开始Extension离线处理 =====
+**Enclave**: <offline_backward>: Init Start
+**Enclave**: <offline_backward>: Init Done
+**Enclave**: <offline_backward>: Extension_update: batchNum=0, 结束循环
+**Enclave**: <offline_backward>: Extension环境清理完成，已释放专用缓冲区
+2025-10-07 15:22:16 <OCALL>: CleanLocalIndex: before clear, local_map.size=0, extensionMap.size=78184
+2025-10-07 15:22:16 <OCALL>: CleanLocalIndex: after clear
+**Enclave**: <offline_backward>: Extension_update: Ocall_CleanLocalIndex 完成, _offline_Ocall=81
+**Enclave**: <offline_backward>: ===== Extension处理完成 =====
+**Enclave**: <offline_backward>: 处理组数: 0, 重选基础块: 0, Ocall次数: 81
+**Enclave**: <offline_backward>: 候选大于5000的组有: 0
+**Enclave**: <offline_backward>: 系统统计: 压缩大小: 2310558497 bytes, 备份大小: 8590 bytes
+**Enclave**: <offline_backward>: 基础块数: 434098, 增量块数: 403949
+**Enclave**: <offline_backward>: Extension节省空间: 0 bytes, 系统总压缩率: 26898236.29%
+**Enclave**: <offline_backward>: Extension_update: 汇总 checkSum=78184, totalProcessedGroups=78184
+**Enclave**: <offline_backward>: 大于1个chunks的组数: 78184

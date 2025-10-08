@@ -1,11 +1,12 @@
 rm(list = ls())
 
-exp = "exp7"
-exportPath = "C:/Users/pc/Desktop/"
+exportPath1 = "C:/Users/"
+exportPath2 = "/Desktop/"
 exportName = "exp4-alpha-2.pdf"
+username <- Sys.info()[["user"]]
 
-root = "D:/RProject/tmp"
-setwd(sprintf("%s/%s", root, exp))
+exportPath = sprintf("%s%s%s", exportPath1, username, exportPath2)
+
 
 library(ggplot2)
 library(readxl)
